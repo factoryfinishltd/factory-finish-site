@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Factory Finish</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Factory Finish logo" class="logo"></a>
+      <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
+      <nav id="mainNav" class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="section container">
+      <h1>Contact & Orders</h1>
+      <p>Email: <a href="mailto:info@example.com">info@example.com</a> — Phone: +44 20 0000 0000</p>
+
+      <form class="contact-form" action="mailto:info@example.com" method="post" enctype="text/plain">
+        <label>Name<input type="text" name="name" required></label>
+        <label>Email<input type="email" name="email" required></label>
+        <label>Company<input type="text" name="company"></label>
+        <label>Message<textarea name="message" rows="6" required></textarea></label>
+        <div class="form-actions">
+          <button class="btn primary" type="submit">Send</button>
+          <button class="btn light" type="reset">Reset</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Factory Finish</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
