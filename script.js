@@ -1,28 +1,24 @@
-// Minimal menu for mobile
+// small mobile drawer toggle
 (function(){
-  const menuBtn = document.getElementById('menuBtn');
-  const mobileMenu = document.getElementById('mobileMenu');
-  if(menuBtn && mobileMenu){
-    menuBtn.addEventListener('click', ()=>{
-      const shown = mobileMenu.getAttribute('data-shown') === 'true';
-      mobileMenu.style.display = shown ? 'none' : 'block';
-      mobileMenu.setAttribute('data-shown', !shown);
-    });
-  }
-  // other menu buttons map to main menu toggle
-  ['menuBtn2','menuBtn3','menuBtn4','menuBtn5'].forEach(id=>{
-    const b = document.getElementById(id);
-    if(b && menuBtn){
-      b.addEventListener('click', ()=> menuBtn.click());
-    }
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileDrawer = document.getElementById('mobileDrawer');
+  if(!menuToggle || !mobileDrawer) return;
+
+  menuToggle.addEventListener('click', function(){
+    const shown = mobileDrawer.style.display === 'block';
+    mobileDrawer.style.display = shown ? 'none' : 'block';
+    mobileDrawer.setAttribute('aria-hidden', shown ? 'true' : 'false');
   });
-  // close mobile menu when clicking outside
+
+  // close drawer on outside click
   document.addEventListener('click', (e)=>{
-    if(!mobileMenu) return;
-    if(mobileMenu.getAttribute('data-shown') !== 'true') return;
-    if(!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)){
-      mobileMenu.style.display = 'none';
-      mobileMenu.setAttribute('data-shown', 'false');
+    if(!mobileDrawer) return;
+    if(mobileDrawer.style.display !== 'block') return;
+    const withinDrawer = mobileDrawer.contains(e.target);
+    const clickedToggle = menuToggle.contains(e.target);
+    if(!withinDrawer && !clickedToggle){
+      mobileDrawer.style.display = 'none';
+      mobileDrawer.setAttribute('aria-hidden', 'true');
     }
   });
 })();
