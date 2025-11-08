@@ -1,65 +1,99 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Factory Finish — Industrial Strength Finishing Solutions</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="manifest" href="site.webmanifest" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Factory Finish — Home</title>
+  <meta name="description" content="Factory Finish — professional finishing solutions." />
+  <link rel="icon" href="favicon-32.png" />
+  <link rel="manifest" href="site.webmanifest" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<header>
-    <div class="nav-container">
-        <div class="brand">Factory Finish</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </div>
+<header class="site-header">
+  <div class="nav-container">
+    <a class="brand" href="index.html">Factory Finish</a>
+
+    <nav class="main-nav" id="mainNav">
+      <a href="index.html">Home</a>
+      <a href="products.html">Products</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <button id="menuToggle" class="menu-toggle" aria-label="Open menu">☰</button>
+  </div>
 </header>
 
-<section class="hero">
+<!-- Mobile drawer (hidden by default) -->
+<div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</div>
+
+<main>
+  <section class="hero">
     <div class="hero-left">
-        <h1>Factory <span class="gradient">Finish</span></h1>
-        <p>Professional finishing solutions — industrial strength, showroom gloss.</p>
-        <div class="cta-buttons">
-            <a href="products.html" class="btn primary">Shop product</a>
-            <a href="Factory-Finish-Label.pdf" class="btn outline" download>Download label</a>
-        </div>
+      <h1>Factory <span class="gradient">Finish</span></h1>
+      <p class="lead">Professional finishing solutions — industrial strength, showroom gloss.</p>
+
+      <div class="cta-row">
+        <a href="products.html" class="btn btn-primary">Shop product</a>
+        <a href="Factory-Finish-Label.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download label</a>
+      </div>
+
+      <ul class="quick-features">
+        <li><strong>High gloss</strong> — durable finish</li>
+        <li><strong>Pro grade</strong> — factory reliability</li>
+        <li><strong>Recyclable</strong> packaging</li>
+      </ul>
     </div>
 
     <div class="hero-right">
-        <div class="mockup">
-            <img src="logo.png" alt="Factory Finish Logo" class="hero-logo">
-            <div class="badge">Factory Grade</div>
-        </div>
+      <div class="mockup">
+        <img src="logo.png" alt="Factory Finish Logo" class="hero-logo">
+        <div class="badge">Factory Grade</div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="products-preview">
-    <h2>Available Products</h2>
+  <section class="products-preview">
+    <div class="container">
+      <h2>Featured products</h2>
 
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="sample-1.jpg" alt="Product sample 1">
-            <h3>Factory Finish — 250ml</h3>
-            <a href="product-detail.html" class="btn small">View details</a>
-        </div>
+      <div class="product-grid">
+        <article class="product-card">
+          <img src="sample-1.jpg" alt="Factory Finish product 1">
+          <h3>Factory Finish — Standard</h3>
+          <p class="muted">High-gloss finishing compound for professional applications.</p>
+          <a href="product-detail.html" class="btn small">View</a>
+        </article>
 
-        <div class="product-card">
-            <img src="sample-2.jpg" alt="Product sample 2">
-            <h3>Factory Finish — 1L</h3>
-            <a href="product-detail.html" class="btn small">View details</a>
-        </div>
+        <article class="product-card">
+          <img src="sample-2.jpg" alt="Factory Finish product 2">
+          <h3>Factory Finish — Low VOC</h3>
+          <p class="muted">Lower VOC option for indoor use and improved air quality.</p>
+          <a href="product-detail.html" class="btn small">View</a>
+        </article>
+      </div>
     </div>
-</section>
+  </section>
+</main>
 
-<footer>
-    <p>© Factory Finish Ltd</p>
-    <a href="privacy.html">Privacy Policy</a> •
-    <a href="terms.html">Terms</a>
+<footer class="site-footer">
+  <div class="container">
+    <div>© Factory Finish Ltd</div>
+    <div class="foot-links">
+      <a href="privacy.html">Privacy</a>
+      <span>•</span>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
 </footer>
 
 <script src="script.js"></script>
