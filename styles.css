@@ -1,91 +1,73 @@
-/* ===== Header / Nav ===== */
-header {
-  padding: 16px 22px;
-  background: #000;
-  border-bottom: 1px solid rgba(255,255,255,0.04);
-  position: sticky;
-  top: 0;
-  z-index: 80;
+:root{
+  --bg:#000;
+  --muted:#bfbfc4;
+  --white:#ffffff;
+  --accent-a:#48f3ff;
+  --accent-b:#ff4bd8;
+  --max-width:1100px;
+  --pad:20px;
+  font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-.nav-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-}
+/* Reset basics */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--white);-webkit-font-smoothing:antialiased}
 
-/* brand — smaller, consistent & left-aligned */
-.brand {
-  font-weight: 900;
-  font-size: 28px;           /* reduced from huge */
-  letter-spacing: -0.5px;
-  color: #fff;
-}
+/* Container helper */
+.container{max-width:var(--max-width);margin:0 auto;padding:0 var(--pad)}
 
-/* nav links — hide on very small screens, show inline on desktop */
-nav {
-  display: flex;
-  gap: 18px;
-  align-items: center;
-  font-weight:700;
-}
-nav a { color: rgba(255,255,255,0.9); font-size:14px; }
+/* Header */
+.site-header{position:sticky;top:0;background:rgba(0,0,0,0.6);backdrop-filter:blur(6px);border-bottom:1px solid rgba(255,255,255,0.03);z-index:80}
+.nav-container{display:flex;align-items:center;gap:16px;padding:14px 6%}
+.brand{font-weight:900;font-size:20px;color:var(--white);text-decoration:none}
+.main-nav{margin-left:auto;display:flex;gap:22px}
+.main-nav a{color:var(--muted);font-weight:700;font-size:15px}
+.menu-toggle{display:none;background:transparent;border:0;color:var(--white);font-size:20px;padding:8px}
 
-/* ===== Hero ===== */
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 460px;
-  gap: 36px;
-  align-items: center;
-  padding: 64px 6% 40px;
-}
+/* Mobile drawer */
+.mobile-drawer{display:none;position:fixed;top:60px;left:0;right:0;background:#060606;border-top:1px solid rgba(255,255,255,0.02);padding:14px 6%;z-index:90}
+.mobile-drawer nav{display:flex;flex-direction:column;gap:12px}
+.mobile-drawer a{color:var(--white);font-weight:700}
 
-/* Left column text */
-.hero-left {
-  max-width: 640px;
-}
+/* Hero */
+.hero{display:grid;grid-template-columns:1fr 460px;gap:36px;align-items:center;padding:90px 6% 40px}
+.hero-left h1{font-size:clamp(28px,6vw,44px);line-height:1.02;margin:0;font-weight:900;text-align:left}
+.gradient{background:linear-gradient(90deg,var(--accent-a),var(--accent-b));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{color:rgba(255,255,255,0.9);margin-top:12px;margin-bottom:18px;font-size:16px}
+.cta-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px}
+.btn{display:inline-block;padding:12px 20px;border-radius:12px;font-weight:800;letter-spacing:0.2px;text-align:center}
+.btn-primary{background:var(--white);color:#000}
+.btn-outline{background:transparent;color:var(--white);border:2px solid rgba(255,255,255,0.12)}
+.btn.small{padding:10px 14px;border-radius:10px}
 
-/* H1 — much more balanced */
-.hero-left h1 {
-  font-size: clamp(28px, 6vw, 44px);   /* safe across devices */
-  line-height: 1.02;
-  margin-bottom: 12px;
-  font-weight: 900;
-}
+/* quick features */
+.quick-features{list-style:none;padding:0;margin:14px 0 0;color:var(--muted);display:flex;gap:18px;flex-wrap:wrap}
+.quick-features li{font-weight:700}
 
-/* Subheading */
-.hero-left p { color: rgba(255,255,255,0.85); font-size:16px; margin:10px 0 18px }
+/* Hero right mockup */
+.mockup{max-width:420px;border-radius:12px;padding:18px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));box-shadow:0 30px 80px rgba(0,0,0,0.6);position:relative}
+.hero-logo{width:100%;height:auto;display:block;object-fit:contain;border-radius:8px}
+.badge{position:absolute;left:16px;top:14px;padding:8px 14px;border-radius:9px;background:linear-gradient(90deg,var(--accent-a),var(--accent-b));color:#000;font-weight:800}
 
-/* CTA buttons */
-.cta-buttons { display:flex; gap:12px; margin-top:12px; flex-wrap:wrap }
-.btn { padding:12px 18px; border-radius:10px; font-weight:800; font-size:14px }
+/* Products grid */
+.products-preview{padding:56px 0}
+.product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.product-card{background:rgba(255,255,255,0.02);padding:14px;border-radius:12px;text-align:center}
+.product-card img{width:100%;height:160px;object-fit:cover;border-radius:8px}
+.muted{color:var(--muted);font-size:14px;margin:8px 0}
 
-/* ===== Hero logo / mockup styling ===== */
-.hero-right { display:flex; align-items:center; justify-content:center; }
-.mockup { width:100%; max-width:420px; border-radius:12px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; box-shadow:0 30px 80px rgba(0,0,0,0.6); }
-.hero-logo { width:100%; height:auto; display:block; object-fit:contain; }
+/* Footer */
+.site-footer{border-top:1px solid rgba(255,255,255,0.03);padding:28px 6%;text-align:center;opacity:0.9}
+.foot-links{margin-top:8px;opacity:0.8}
 
-/* badge */
-.badge { position:relative; display:inline-block; padding:8px 14px; border-radius:9px; background:linear-gradient(90deg,#48f3ff,#ff4bd8); color:#000; font-weight:800; margin-top:8px; }
-
-/* ===== Products grid ===== */
-.products-preview { padding:48px 6%; }
-.product-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:24px }
-.product-card { background: rgba(255,255,255,0.02); padding:14px; border-radius:12px; text-align:center; }
-.product-card img { width:100%; height:160px; object-fit:cover; border-radius:8px; }
-
-/* ===== Footer ===== */
-footer { padding:32px 6%; text-align:center; opacity:0.85; }
-
-/* ===== Responsive ===== */
-@media (max-width:900px) {
-  .nav-container { padding:0 8px }
-  .brand { font-size:22px }
-  nav { display:none } /* hide inline nav on small screens - mobile menu can be added later */
-  .hero { grid-template-columns:1fr; padding:36px 6% }
-  .hero-left { text-align:center }
-  .mockup { margin:0 auto; max-width:320px }
-  .product-grid { grid-template-columns:1fr }
-  .hero-left h1 { font-size: clamp(22px, 8vw, 36px) }
+/* Responsive */
+@media (max-width:900px){
+  .main-nav{display:none}
+  .menu-toggle{display:block;margin-left:auto}
+  .hero{grid-template-columns:1fr;padding:56px 6% 36px;text-align:center}
+  .hero-left h1{text-align:center}
+  .mockup{max-width:320px;margin:0 auto}
+  .product-grid{grid-template-columns:1fr}
+  .nav-container{padding:12px 6%}
 }
