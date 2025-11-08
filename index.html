@@ -4,98 +4,163 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Factory Finish — Home</title>
-  <meta name="description" content="Factory Finish — professional finishing solutions." />
-  <link rel="icon" href="favicon-32.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+  <meta name="description" content="Factory Finish — professional finishing solutions. High gloss, professional grade." />
+  <!-- Cache-bust with ?v=2 to force browsers to fetch the new logo -->
+  <link rel="icon" href="logo.png?v=2" sizes="32x32" />
+  <style>
+    /* ---------------- tiny, self-contained styles for a simple single page ---------------- */
+    :root{
+      --bg:#060606;
+      --muted:#cfcfcf;
+      --white:#ffffff;
+      --accent1:#2be6ff;
+      --accent2:#ff5bcf;
+      --container:1100px;
+      --radius:10px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background:linear-gradient(180deg,#050505,#0b0b0c);
+      color:var(--white);
+      -webkit-font-smoothing:antialiased;
+    }
+    .wrap{max-width:var(--container);margin:0 auto;padding:20px}
+    /* header */
+    header{display:flex;align-items:center;gap:16px;padding:14px 0}
+    .logo{height:44px}
+    .nav{margin-left:auto;display:flex;gap:12px}
+    .nav a{color:var(--muted);text-decoration:none;font-weight:700;font-size:14px}
+    .menu-btn{display:none;background:none;border:0;color:var(--white);font-size:20px}
+    /* hero */
+    .hero{display:flex;gap:28px;align-items:center;padding:36px 0;flex-wrap:wrap}
+    .hero .left{flex:1;min-width:260px}
+    .hero h1{font-size:clamp(26px,6vw,44px);margin:0 0 12px;font-weight:800;line-height:1}
+    .accent{background:linear-gradient(90deg,var(--accent1),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+    .lead{color:var(--muted);margin:10px 0 18px;max-width:650px}
+    .cta{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none;display:inline-block}
+    .btn-primary{background:#fff;color:#000}
+    .btn-ghost{background:transparent;border:2px solid rgba(255,255,255,0.08);color:#fff}
+    /* hero image */
+    .hero .right{width:320px;max-width:40%}
+    .mock{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.6));padding:18px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+    .mock img{max-width:100%;height:auto;display:block}
+    /* sections */
+    section{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02)}
+    h2{font-size:18px;margin:0 0 14px}
+    .grid{display:grid;gap:16px}
+    .grid.products{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    .card{background:rgba(255,255,255,0.02);padding:12px;border-radius:10px}
+    .card img{width:100%;height:150px;object-fit:cover;border-radius:8px}
+    .muted{color:var(--muted);font-size:14px}
+    /* footer */
+    footer{padding:20px 0;text-align:center;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,0.02)}
+    /* responsive */
+    @media (max-width:860px){
+      .nav{display:none}
+      .menu-btn{display:block;margin-left:auto}
+      .hero{flex-direction:column;text-align:center}
+      .hero .right{width:100%}
+    }
+  </style>
 </head>
 <body>
+  <div class="wrap">
+    <header>
+      <a href="index.html"><img src="logo.png?v=2" alt="Factory Finish" class="logo"></a>
+      <nav class="nav" id="nav">
+        <a href="#products">Products</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </header>
 
-<header class="site-header">
-  <div class="nav-container">
-    <a class="brand" href="index.html">Factory Finish</a>
+    <main>
+      <section class="hero" id="top">
+        <div class="left">
+          <h1>Factory <span class="accent">Finish</span></h1>
+          <p class="lead">Professional finishing solutions — industrial strength with a showroom gloss. Simple, effective, pro-grade.</p>
+          <div class="cta">
+            <a class="btn btn-primary" href="#products">Shop products</a>
+            <a class="btn btn-ghost" href="Factory-Finish-Label.pdf" target="_blank" rel="noopener">Download label</a>
+          </div>
+        </div>
 
-    <nav class="main-nav" id="mainNav">
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
+        <div class="right">
+          <div class="mock">
+            <!-- your logo displayed big in the hero -->
+            <img src="logo.png?v=2" alt="Factory Finish logo">
+          </div>
+        </div>
+      </section>
 
-    <button id="menuToggle" class="menu-toggle" aria-label="Open menu">☰</button>
+      <section id="products">
+        <h2>Products</h2>
+        <div class="grid products">
+          <div class="card">
+            <img src="sample-1.jpg" alt="Product 1">
+            <h3>Factory Finish — Standard</h3>
+            <p class="muted">High-gloss finishing compound for professional applications.</p>
+          </div>
+
+          <div class="card">
+            <img src="sample-2.jpg" alt="Product 2">
+            <h3>Factory Finish — Low VOC</h3>
+            <p class="muted">Lower VOC option for indoor use and improved air quality.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2>About</h2>
+        <div class="card">
+          <p class="muted">Factory Finish provides trade-grade finishing products engineered for consistent, high-gloss, durable results. Made for workshops and manufacturers.</p>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <div class="card">
+          <p>Email: <a href="mailto:info@factoryfinishltd.co.uk">info@factoryfinishltd.co.uk</a></p>
+          <p>Download label: <a href="Factory-Finish-Label.pdf" target="_blank">Factory-Finish-Label.pdf</a></p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div>© Factory Finish Ltd • <a href="privacy.html">Privacy</a> • <a href="terms.html">Terms</a></div>
+    </footer>
   </div>
-</header>
 
-<!-- Mobile drawer (hidden by default) -->
-<div id="mobileDrawer" class="mobile-drawer" aria-hidden="true">
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="products.html">Products</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</div>
+  <script>
+    // small menu toggle + smooth scroll
+    (function(){
+      const menuBtn = document.getElementById('menuBtn');
+      const nav = document.getElementById('nav');
 
-<main>
-  <section class="hero">
-    <div class="hero-left">
-      <h1>Factory <span class="gradient">Finish</span></h1>
-      <p class="lead">Professional finishing solutions — industrial strength, showroom gloss.</p>
+      menuBtn.addEventListener('click', ()=> {
+        if(nav.style.display === 'flex') nav.style.display = 'none';
+        else nav.style.display = 'flex';
+      });
 
-      <div class="cta-row">
-        <a href="products.html" class="btn btn-primary">Shop product</a>
-        <a href="Factory-Finish-Label.pdf" class="btn btn-outline" target="_blank" rel="noopener">Download label</a>
-      </div>
-
-      <ul class="quick-features">
-        <li><strong>High gloss</strong> — durable finish</li>
-        <li><strong>Pro grade</strong> — factory reliability</li>
-        <li><strong>Recyclable</strong> packaging</li>
-      </ul>
-    </div>
-
-    <div class="hero-right">
-      <div class="mockup">
-        <img src="logo.png" alt="Factory Finish Logo" class="hero-logo">
-        <div class="badge">Factory Grade</div>
-      </div>
-    </div>
-  </section>
-
-  <section class="products-preview">
-    <div class="container">
-      <h2>Featured products</h2>
-
-      <div class="product-grid">
-        <article class="product-card">
-          <img src="sample-1.jpg" alt="Factory Finish product 1">
-          <h3>Factory Finish — Standard</h3>
-          <p class="muted">High-gloss finishing compound for professional applications.</p>
-          <a href="product-detail.html" class="btn small">View</a>
-        </article>
-
-        <article class="product-card">
-          <img src="sample-2.jpg" alt="Factory Finish product 2">
-          <h3>Factory Finish — Low VOC</h3>
-          <p class="muted">Lower VOC option for indoor use and improved air quality.</p>
-          <a href="product-detail.html" class="btn small">View</a>
-        </article>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer class="site-footer">
-  <div class="container">
-    <div>© Factory Finish Ltd</div>
-    <div class="foot-links">
-      <a href="privacy.html">Privacy</a>
-      <span>•</span>
-      <a href="terms.html">Terms</a>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+      // Smooth scrolling for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(a=>{
+        a.addEventListener('click', function(e){
+          const href = this.getAttribute('href');
+          if(href.length > 1){
+            e.preventDefault();
+            const el = document.querySelector(href);
+            if(el) el.scrollIntoView({behavior:'smooth', block:'start'});
+            // hide nav on mobile after click
+            if(window.innerWidth < 860) nav.style.display = 'none';
+          }
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
