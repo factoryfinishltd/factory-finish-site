@@ -1,10 +1,19 @@
-# Factory Finish Website
+# Factory Finish Ltd — Website (Modern / Bold)
 
-✅ Live Website: https://factoryfinishltd.github.io/factory-finish-site/
+Live: https://factoryfinishltd.github.io/factory-finish-site/
 
-## 🚀 How to Edit
-1. Edit `index.html` to change the homepage
-2. Edit `style.css` to change colors, fonts, and layout
-3. Replace `logo.png` to update the logo (same filename to avoid breaking the site)
+This repo contains a static multi-page website for Factory Finish. Files to edit live on GitHub Pages:
 
-## 📁 File Structure
+- `index.html` — homepage
+- `products.html` — product listing
+- `product-detail.html` — single product
+- `about.html`, `contact.html`, `privacy.html`, `terms.html`
+- `styles.css` — main styling (replace to change look)
+- `script.js` — tiny mobile menu
+- Assets: `logo.png`, `logo-512.png`, `logo-192.png`, `favicon-32.png`, `favicon.ico`, `sample-1.jpg`, `sample-2.jpg`, `Factory-Finish-Label.pdf`, `recycle-green.svg`
+
+**Notes**
+- Filenames are case-sensitive — keep lowercase.
+- After editing, commit and wait a few seconds for Pages to rebuild. Refresh the live URL to see changes.
+
+© Factory Finish Ltd
