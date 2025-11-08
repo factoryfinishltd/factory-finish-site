@@ -1,17 +1,28 @@
-// Simple mobile nav toggle
-function wireMenus(){
-  const toggles = document.querySelectorAll('.menu-toggle');
-  toggles.forEach(btn=>{
-    const nav = btn.parentElement.querySelector('.main-nav');
-    btn.addEventListener('click', ()=>{
-      const expanded = btn.getAttribute('aria-expanded') === 'true';
-      btn.setAttribute('aria-expanded', !expanded);
-      if(nav){
-        const shown = nav.getAttribute('data-shown') === 'true';
-        nav.style.display = shown ? 'none' : 'block';
-        nav.setAttribute('data-shown', !shown);
-      }
+// Minimal menu for mobile
+(function(){
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  if(menuBtn && mobileMenu){
+    menuBtn.addEventListener('click', ()=>{
+      const shown = mobileMenu.getAttribute('data-shown') === 'true';
+      mobileMenu.style.display = shown ? 'none' : 'block';
+      mobileMenu.setAttribute('data-shown', !shown);
     });
+  }
+  // other menu buttons map to main menu toggle
+  ['menuBtn2','menuBtn3','menuBtn4','menuBtn5'].forEach(id=>{
+    const b = document.getElementById(id);
+    if(b && menuBtn){
+      b.addEventListener('click', ()=> menuBtn.click());
+    }
   });
-}
-document.addEventListener('DOMContentLoaded', wireMenus);
+  // close mobile menu when clicking outside
+  document.addEventListener('click', (e)=>{
+    if(!mobileMenu) return;
+    if(mobileMenu.getAttribute('data-shown') !== 'true') return;
+    if(!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)){
+      mobileMenu.style.display = 'none';
+      mobileMenu.setAttribute('data-shown', 'false');
+    }
+  });
+})();
