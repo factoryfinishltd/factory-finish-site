@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Contact — Factory Finish</title>
   <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="logo.png" />
 </head>
 <body>
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html"><img src="assets/logo.png" alt="Factory Finish logo" class="logo"></a>
-      <button id="menuToggle" class="menu-toggle" aria-label="Toggle menu">☰</button>
-      <nav id="mainNav" class="main-nav">
+      <a class="brand" href="index.html"><img src="logo.png" alt="Factory Finish" class="logo"></a>
+      <button id="menuToggleContact" class="menu-toggle" aria-label="Menu">☰</button>
+      <nav id="mainNavContact" class="main-nav" aria-hidden="true">
         <a href="index.html">Home</a>
         <a href="products.html">Products</a>
         <a href="about.html">About</a>
@@ -22,28 +23,25 @@
 
   <main>
     <section class="section container">
-      <h1>Contact & Orders</h1>
-      <p>Email: <a href="mailto:info@example.com">info@example.com</a> — Phone: +44 20 0000 0000</p>
-
-      <form class="contact-form" action="mailto:info@example.com" method="post" enctype="text/plain">
-        <label>Name<input type="text" name="name" required></label>
-        <label>Email<input type="email" name="email" required></label>
-        <label>Company<input type="text" name="company"></label>
-        <label>Message<textarea name="message" rows="6" required></textarea></label>
-        <div class="form-actions">
-          <button class="btn primary" type="submit">Send</button>
-          <button class="btn light" type="reset">Reset</button>
-        </div>
-      </form>
+      <h1>Contact</h1>
+      <p>For sales and support email <a href="mailto:info@factoryfinishltd.co.uk">info@factoryfinishltd.co.uk</a> or use the details below.</p>
+      <div class="card">
+        <h3>Factory Finish Ltd</h3>
+        <p>Address line 1<br/>Town<br/>Country</p>
+        <p><strong>Email:</strong> <a href="mailto:info@factoryfinishltd.co.uk">info@factoryfinishltd.co.uk</a></p>
+      </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <p>© <span id="year"></span> Factory Finish</p>
+      <small>© Factory Finish Ltd</small>
+      <nav class="footer-nav">
+        <a href="privacy.html">Privacy</a>
+        <a href="terms.html">Terms</a>
+      </nav>
     </div>
   </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
