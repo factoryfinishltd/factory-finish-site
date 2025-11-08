@@ -1,147 +1,91 @@
-/* ---------------- GLOBAL ---------------- */
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background: #000;
-    color: white;
-    line-height: 1.5;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
-}
-
-/* ---------------- HEADER ---------------- */
-
+/* ===== Header / Nav ===== */
 header {
-    padding: 22px;
-    background: #000;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 16px 22px;
+  background: #000;
+  border-bottom: 1px solid rgba(255,255,255,0.04);
+  position: sticky;
+  top: 0;
+  z-index: 80;
 }
 
 .nav-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
 }
 
-nav a {
-    margin-left: 22px;
-    opacity: 0.85;
+/* brand — smaller, consistent & left-aligned */
+.brand {
+  font-weight: 900;
+  font-size: 28px;           /* reduced from huge */
+  letter-spacing: -0.5px;
+  color: #fff;
 }
 
-/* ---------------- HERO ---------------- */
+/* nav links — hide on very small screens, show inline on desktop */
+nav {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  font-weight:700;
+}
+nav a { color: rgba(255,255,255,0.9); font-size:14px; }
 
+/* ===== Hero ===== */
 .hero {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 120px 8%;
-    flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 460px;
+  gap: 36px;
+  align-items: center;
+  padding: 64px 6% 40px;
 }
 
-.gradient {
-    background: linear-gradient(90deg, #48f3ff, #ff4bd8);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
+/* Left column text */
 .hero-left {
-    max-width: 460px;
+  max-width: 640px;
 }
 
-.cta-buttons {
-    margin-top: 24px;
-    display: flex;
-    gap: 16px;
+/* H1 — much more balanced */
+.hero-left h1 {
+  font-size: clamp(28px, 6vw, 44px);   /* safe across devices */
+  line-height: 1.02;
+  margin-bottom: 12px;
+  font-weight: 900;
 }
 
-.btn {
-    padding: 14px 26px;
-    border-radius: 10px;
-    font-weight: bold;
-}
+/* Subheading */
+.hero-left p { color: rgba(255,255,255,0.85); font-size:16px; margin:10px 0 18px }
 
-.primary {
-    background: white;
-    color: black;
-}
+/* CTA buttons */
+.cta-buttons { display:flex; gap:12px; margin-top:12px; flex-wrap:wrap }
+.btn { padding:12px 18px; border-radius:10px; font-weight:800; font-size:14px }
 
-.outline {
-    border: 1px solid white;
-}
+/* ===== Hero logo / mockup styling ===== */
+.hero-right { display:flex; align-items:center; justify-content:center; }
+.mockup { width:100%; max-width:420px; border-radius:12px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:18px; box-shadow:0 30px 80px rgba(0,0,0,0.6); }
+.hero-logo { width:100%; height:auto; display:block; object-fit:contain; }
 
-/* ---------------- HERO LOGO ---------------- */
-.hero-logo {
-    max-width: 420px;
-    width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-    padding: 28px;
-    border-radius: 12px;
-    object-fit: contain;
-    background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-}
+/* badge */
+.badge { position:relative; display:inline-block; padding:8px 14px; border-radius:9px; background:linear-gradient(90deg,#48f3ff,#ff4bd8); color:#000; font-weight:800; margin-top:8px; }
 
-.mockup {
-    position: relative;
-}
+/* ===== Products grid ===== */
+.products-preview { padding:48px 6%; }
+.product-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; margin-top:24px }
+.product-card { background: rgba(255,255,255,0.02); padding:14px; border-radius:12px; text-align:center; }
+.product-card img { width:100%; height:160px; object-fit:cover; border-radius:8px; }
 
-.badge {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    padding: 8px 18px;
-    background: linear-gradient(90deg, #48f3ff, #ff4bd8);
-    border-radius: 8px;
-    color: black;
-    font-weight: bold;
-}
+/* ===== Footer ===== */
+footer { padding:32px 6%; text-align:center; opacity:0.85; }
 
-/* ---------------- PRODUCT CARDS ---------------- */
-
-.products-preview {
-    padding: 90px 8%;
-    text-align: center;
-}
-
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-    margin-top: 50px;
-}
-
-.product-card img {
-    width: 100%;
-    border-radius: 14px;
-}
-
-/* mobile */
-@media (max-width: 900px) {
-    .hero {
-        text-align: center;
-        flex-direction: column;
-        gap: 40px;
-    }
-
-    .product-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ---------------- FOOTER ---------------- */
-
-footer {
-    padding: 40px;
-    text-align: center;
-    opacity: 0.75;
+/* ===== Responsive ===== */
+@media (max-width:900px) {
+  .nav-container { padding:0 8px }
+  .brand { font-size:22px }
+  nav { display:none } /* hide inline nav on small screens - mobile menu can be added later */
+  .hero { grid-template-columns:1fr; padding:36px 6% }
+  .hero-left { text-align:center }
+  .mockup { margin:0 auto; max-width:320px }
+  .product-grid { grid-template-columns:1fr }
+  .hero-left h1 { font-size: clamp(22px, 8vw, 36px) }
 }
