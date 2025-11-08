@@ -1,24 +1,17 @@
-document.addEventListener('DOMContentLoaded', function(){
-  // menu toggle (same file used on all pages)
-  const menu = document.getElementById('mainNav');
-  const toggle = document.getElementById('menuToggle');
-  if(toggle && menu){
-    toggle.addEventListener('click', () => {
-      const isHidden = getComputedStyle(menu).display === 'none';
-      menu.style.display = isHidden ? 'flex' : 'none';
+// Simple mobile nav toggle
+function wireMenus(){
+  const toggles = document.querySelectorAll('.menu-toggle');
+  toggles.forEach(btn=>{
+    const nav = btn.parentElement.querySelector('.main-nav');
+    btn.addEventListener('click', ()=>{
+      const expanded = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', !expanded);
+      if(nav){
+        const shown = nav.getAttribute('data-shown') === 'true';
+        nav.style.display = shown ? 'none' : 'block';
+        nav.setAttribute('data-shown', !shown);
+      }
     });
-  }
-
-  // Set current year in footer
-  const years = document.querySelectorAll('#year');
-  years.forEach(el => el.textContent = new Date().getFullYear());
-
-  // Simple accessibility: close mobile menu when clicking outside
-  document.addEventListener('click', (e) => {
-    if (!menu || !toggle) return;
-    const target = e.target;
-    if (getComputedStyle(menu).display === 'flex' && !menu.contains(target) && target !== toggle) {
-      menu.style.display = 'none';
-    }
   });
-});
+}
+document.addEventListener('DOMContentLoaded', wireMenus);
