@@ -1,113 +1,66 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Factory Finish — Home</title>
-  <meta name="description" content="Factory Finish — professional finishing solutions." />
-  <link rel="icon" href="favicon-32.png" />
-  <link rel="apple-touch-icon" sizes="192x192" href="logo-192.png" />
-  <link rel="manifest" href="site.webmanifest" />
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Factory Finish — Industrial Strength Finishing Solutions</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="manifest" href="site.webmanifest" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-grid">
-      <a class="brand" href="index.html"><img src="logo.png" alt="Factory Finish" class="logo"></a>
-      <nav class="nav" id="mainNav">
-        <a href="index.html">Home</a>
-        <a href="products.html">Products</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
-      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+
+<header>
+    <div class="nav-container">
+        <div class="brand">Factory Finish</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="products.html">Products</a>
+            <a href="contact.html">Contact</a>
+        </nav>
     </div>
-  </header>
+</header>
 
-  <main>
-    <section class="hero">
-      <div class="container hero-inner">
-        <div class="hero-left">
-          <h1>Factory <span class="accent">Finish</span></h1>
-          <p class="sub">Professional finishing solutions — industrial strength, showroom gloss.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="product-detail.html">Shop product</a>
-            <a class="btn btn-ghost" href="Factory-Finish-Label.pdf" target="_blank" rel="noopener">Download label</a>
-          </div>
-          <ul class="quick-features">
-            <li><strong>High gloss</strong> — durable finish</li>
-            <li><strong>Pro grade</strong> — factory reliability</li>
-            <li><strong>Recyclable</strong> packaging</li>
-          </ul>
+<section class="hero">
+    <div class="hero-left">
+        <h1>Factory <span class="gradient">Finish</span></h1>
+        <p>Professional finishing solutions — industrial strength, showroom gloss.</p>
+        <div class="cta-buttons">
+            <a href="products.html" class="btn primary">Shop product</a>
+            <a href="Factory-Finish-Label.pdf" class="btn outline" download>Download label</a>
         </div>
+    </div>
 
-        <div class="hero-right">
-          <div class="mockup">
-            <img src="logo-512.png" alt="Factory Finish sample" />
+    <div class="hero-right">
+        <div class="mockup">
+            <img src="logo.png" alt="Factory Finish Logo" class="hero-logo">
             <div class="badge">Factory Grade</div>
-          </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section container products-preview">
-      <h2>Featured products</h2>
-      <div class="grid-3">
-        <article class="product-card">
-          <img src="sample-1.jpg" alt="Factory Finish product 1">
-          <h3>Factory Finish — Standard</h3>
-          <p>High-gloss finishing compound for professional applications.</p>
-          <a class="btn btn-primary" href="product-detail.html">View</a>
-        </article>
-
-        <article class="product-card">
-          <img src="sample-2.jpeg" alt="Factory Finish product 2">
-          <h3>Factory Finish — Low VOC</h3>
-          <p>Lower VOC option for indoor use and improved air quality.</p>
-          <a class="btn btn-outline" href="product-detail.html">View</a>
-        </article>
-
-        <article class="product-card">
-          <img src="sample-1.jpg" alt="Factory Finish product 3">
-          <h3>Factory Finish — Protect</h3>
-          <p>Protective clear coat that locks in gloss and repels dirt.</p>
-          <a class="btn btn-outline" href="product-detail.html">View</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section container eco-section">
-      <div class="eco-grid">
-        <div>
-          <h3>Eco information</h3>
-          <p>Packaging is recyclable. Rinse before recycling. We optimise formulas to reduce VOCs where possible.</p>
-        </div>
-        <div class="eco-visual">
-          <img src="recycle-green.svg" alt="Recycle" />
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div class="footer-left">© <strong>Factory Finish Ltd</strong></div>
-      <nav class="footer-right">
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms</a>
-        <a href="contact.html">Contact</a>
-      </nav>
     </div>
-  </footer>
+</section>
 
-  <div id="mobileMenu" class="mobile-menu" aria-hidden="true">
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="about.html">About</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </div>
+<section class="products-preview">
+    <h2>Available Products</h2>
+
+    <div class="product-grid">
+        <div class="product-card">
+            <img src="sample-1.jpg" alt="Product sample 1">
+            <h3>Factory Finish — 250ml</h3>
+            <a href="product-detail.html" class="btn small">View details</a>
+        </div>
+
+        <div class="product-card">
+            <img src="sample-2.jpg" alt="Product sample 2">
+            <h3>Factory Finish — 1L</h3>
+            <a href="product-detail.html" class="btn small">View details</a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© Factory Finish Ltd</p>
+    <a href="privacy.html">Privacy Policy</a> •
+    <a href="terms.html">Terms</a>
+</footer>
 
 <script src="script.js"></script>
 </body>
